@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 import 'package:english_words/english_words.dart';
+import 'IntroPage.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -34,22 +34,18 @@ class Ball extends StatefulWidget {
 }
 
 class _BallState extends State<Ball> {
-  int ballCount = 1;
-
-  void getData() {
-    print('I got clicked');
-    ballCount = Random().nextInt(4) + 1;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Expanded(
-        child: TextButton(
+        child: ElevatedButton(
           onPressed: () {
-            setState(() {
-              getData();
-            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => IntroPage(),
+              ),
+            );
           },
           child: Text(adjectives.last),
         ),
