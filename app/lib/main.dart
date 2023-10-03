@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -50,7 +51,7 @@ class _BallState extends State<Ball> {
               getData();
             });
           },
-          child: Image.asset('images/ball$ballCount.png'),
+          child: Text(adjectives.last),
         ),
       ),
     );
